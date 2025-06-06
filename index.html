@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doaa's Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    /* Base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #000000, #111111);
+      min-height: 100vh;
+      font-family: "Courier New", Courier, monospace !important;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* Responsive header */
+    .header-gradient {
+      background: linear-gradient(to right, #821add, #ad0d0d, #1d4ed8),
+                  linear-gradient(to bottom, transparent, #000000);
+      background-blend-mode: multiply;
+      padding: clamp(2rem, 5vw, 6rem) 1rem;
+      min-height: 40vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Typing animation */
+    .typing {
+      overflow: hidden;
+      white-space: nowrap;
+      animation: typing 3.5s steps(40, end);
+      font-family: "Courier New", Courier, monospace !important;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    /* Responsive typography */
+    .responsive-text {
+      font-size: clamp(2rem, 8vw, 4.5rem);
+      line-height: 1.2;
+    }
+
+    .responsive-subtext {
+      font-size: clamp(1.25rem, 4vw, 2rem);
+      line-height: 1.4;
+    }
+
+    /* Responsive grid */
+    .responsive-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+      gap: clamp(1rem, 2vw, 2rem);
+      padding: clamp(1rem, 2vw, 2rem);
+    }
+
+    /* Responsive images */
+    .responsive-image {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 0.5rem;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Responsive navigation */
+    .nav-buttons {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      gap: clamp(0.5rem, 2vw, 1rem);
+      padding: clamp(0.5rem, 2vw, 1rem);
+      margin: clamp(1rem, 3vw, 2rem) 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-button {
+      padding: clamp(0.5rem, 2vw, 1rem) clamp(1rem, 3vw, 2rem);
+      border-radius: 9999px;
+      transition: all 0.3s ease;
+      font-size: clamp(0.875rem, 2vw, 1rem);
+      white-space: nowrap;
+      min-width: fit-content;
+    }
+
+    /* Content sections */
+    .tab-content {
+      width: min(95%, 1200px);
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2rem);
+    }
+
+    .content-card {
+      padding: clamp(1rem, 3vw, 2rem);
+      margin-bottom: clamp(1rem, 3vw, 2rem);
+    }
+
+    /* Media queries for different devices */
+    /* Large laptops and desktops */
+    @media (min-width: 1200px) {
+      .responsive-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Laptops and small desktops */
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .responsive-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Tablets and small laptops */
+    @media (min-width: 768px) and (max-width: 991px) {
+      .responsive-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Large phones and small tablets */
+    @media (min-width: 481px) and (max-width: 767px) {
+      .responsive-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-buttons {
+        padding: 0.5rem;
+      }
+      .nav-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+      }
+    }
+
+    /* Phones */
+    @media (max-width: 480px) {
+      .header-gradient {
+        min-height: 30vh;
+      }
+      .responsive-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-buttons {
+        padding: 0.5rem;
+      }
+      .nav-button {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.75rem;
+      }
+      .image-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Landscape orientation */
+    @media (max-height: 500px) and (orientation: landscape) {
+      .header-gradient {
+        min-height: 100vh;
+      }
+      .nav-buttons {
+        flex-direction: row;
+      }
+    }
+
+    /* High-DPI screens */
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      .responsive-image {
+        image-rendering: -webkit-optimize-contrast;
+      }
+    }
+  </style>
+</head>
+<body class="text-white font-sans">
+  <!-- Header -->
+  <header class="header-gradient text-center">
+    <h1 class="responsive-text text-gray-300 font-bold mb-4 typing">Doaa Alghamdi</h1>
+    <p class="responsive-subtext text-gray-300 typing">Computer Science Senior</p>
+  </header>
+
+  <!-- Tabs Navigation -->
+  <div class="nav-buttons">
+    <button onclick="showTab('about')" class="nav-button bg-purple-900 hover:bg-gray-800">About Me</button>
+    <button onclick="showTab('projects')" class="nav-button bg-red-900 hover:bg-gray-700">Projects</button>
+    <button onclick="showTab('volunteer')" class="nav-button bg-blue-900 hover:bg-gray-700">Volunteer</button>
+    <button onclick="showTab('events')" class="nav-button bg-pink-900 hover:bg-gray-700">Events</button>
+  </div>
+
+  <!-- Content Sections -->
+  <div id="about" class="tab-content">
+    <h2 class="text-2xl font-semibold mb-4 text-purple-400">Who Am I?</h2>
+    <p class="pl-5">Computer Science student at King Saud University with a focused interest in AI development, computer vision. I approach problems with a mix of logic and curiosity, and I prefer working hands-on—learning by doing, not just reading. I've worked on practical projects smart solutions for accessibility. Comfortable working in fast-paced technical environments. Whether it's digging into code or collaborating on ideas.</p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-4 text-purple-400">Skills</h2>
+    <div class="grid grid-cols-2 gap-4 max-w-2xl p-4">
+      <div class="bg-gray-800 p-4 rounded-lg text-center">
+        <span class="text-gray-200">Python</span>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-lg text-center">
+        <span class="text-gray-200">C++</span>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-lg text-center">
+        <span class="text-gray-200">HTML/CSS/JS</span>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-lg text-center">
+        <span class="text-gray-200">Machine Learning</span>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-lg text-center">
+        <span class="text-gray-200">Computer Vision</span>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-lg text-center">
+        <span class="text-gray-200">IoT</span>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-lg text-center">
+        <span class="text-gray-200">Java</span>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-lg text-center">
+        <span class="text-gray-200">Git/GitHub</span>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-lg text-center">
+        <span class="text-gray-200">AI</span>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-lg text-center">
+        <span class="text-gray-200">VS</span>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-4 text-purple-400">Contact</h2>
+    <p class="pl-5">If you're interested in working together or just want to connect, reach out:</p>
+    <div class="flex space-x-8 mt-6 pl-10">
+        <a href="mailto:dee0gh@outlook.com" title="Email">
+            <div>
+                <i class="far fa-envelope text-2xl text-white"></i>
+            </div>
+            <span class="text-sm text-gray-300"></span>
+        </a>
+      
+        <a href="https://www.linkedin.com/in/doaa-alghamdi-0297062a7/" title="LinkedIn">
+            <div>
+                <i class="fab fa-linkedin-in text-2xl text-white"></i>
+            </div>
+            <span class="text-sm text-gray-300"></span>
+        </a>
+        <a href="https://wa.me/966500312784" title="WhatsApp">
+            <div>
+                <i class="fab fa-whatsapp text-2xl text-white"></i>
+            </div>
+            <span class="text-sm text-gray-300"></span>
+        </a>
+        <a href="https://github.com/deeishere" title="GitHub">
+          <div>
+              <i class="fab fa-github-alt text-2xl text-white"></i>
+          </div>
+          <span class="text-sm text-gray-300"></span>
+      </a>
+    </div>
+
+  </div>
+
+  <div id="projects" class="tab-content hidden p-8 max-w-4xl mx-auto mt-6 rounded shadow text-white">
+
+    <div class="grid grid-cols-1 gap-6">
+      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+        <h3 class="text-xl font-bold text-red-500 mb-3">AI Titanic Prediction</h3>
+        <p class="text-gray-300">ML model using Titanic dataset to predict survival. Built with Python, Pandas, and Scikit-Learn.</p>
+      </div>
+
+      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+        <h3 class="text-xl font-bold text-red-500 mb-3">Image Resizing</h3>
+        <p class="text-gray-300">Vision + AI system to help deaf/mute users communicate and navigate inside the Two Holy Mosques.</p>
+      </div>
+
+      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+        <h3 class="text-xl font-bold text-red-500 mb-3">Generate Recipe</h3>
+        <p class="text-gray-300">Vision + AI system to help deaf/mute users communicate and navigate inside the Two Holy Mosques.</p>
+      </div>
+
+      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+        <h3 class="text-xl font-bold text-red-500 mb-3">Humanoid Robot</h3>
+        <p class="text-gray-300">Vision + AI system to help deaf/mute users communicate and navigate inside the Two Holy Mosques.</p>
+      </div>
+
+      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+        <h3 class="text-xl font-bold text-red-500 mb-3">Google Search</h3>
+        <p class="text-gray-300">Vision + AI system to help deaf/mute users communicate and navigate inside the Two Holy Mosques.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="volunteer" class="tab-content hidden p-8 max-w-4xl mx-auto mt-6 rounded shadow text-white">
+    <div class="grid grid-cols-1 gap-6">
+      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+        <h3 class="text-xl font-bold text-blue-400 mb-3">Cyber Security Club</h3>
+        <h4 class="text-lg font-semibold text-blue-400 mb-1">Leader Of Activities</h4>
+        <div class="border-t border-gray-700 my-4"></div>
+        <div class="space-y-4">
+          <div>
+            <div class="flex gap-6 mb-6 mt-8">
+              <img src="Photos/Visit2.jpeg" alt="Visit1" class="w-1/3 h-64 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <img src="Photos/Visit1.jpeg" alt="Visit1" class="w-1/3 h-64 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <img src="Photos/Visit3.png" alt="Visit1" class="w-1/3 h-64 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+            </div>
+            <h4 class="text-lg font-semibold text-blue-300 mb-2">School Visits</h4>
+            <p class="text-gray-300">As part of the Cyber Security Club's outreach initiative, we conducted an educational visit to a local school to introduce students to key concepts in cybersecurity.</p>
+
+              <p class="text-gray-300"><strong>Cyber Attacks</strong> – Types, real-world examples, and how they impact individuals and organizations.</p>
+              
+              <p class="text-gray-300"><strong>Cyber Security</strong> – Basic principles of protecting personal data, safe internet practices, and the importance of digital awareness.</p>
+              
+              <p class="text-gray-300 mt-4"> The visit aimed to raise early awareness about online threats and promote a culture of digital responsibility among younger students. The interactive approach and real-life scenarios helped simplify complex topics and spark curiosity in the field.</p>
+          </div>
+          <div class="border-t border-gray-700 my-4"></div>
+          <div>
+            <div class="flex gap-6 mb-6">
+              <img src="Photos/Booth1.jpeg" alt="Visit1" class="w-1/4 h-64 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <img src="Photos/Booth2.jpeg" alt="Visit1" class="w-1/4 h-64 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <img src="Photos/Booth3.jpeg" alt="Visit1" class="w-1/4 h-64 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <img src="Photos/Booth4.jpeg" alt="Visit1" class="w-1/4 h-64 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+            </div>
+            <h4 class="text-lg font-semibold text-blue-300 mb-2">Awareness Booths</h4>
+            <p class="text-gray-300">Participated in public engagement booths organized by the Cyber Security Club at major malls to raise awareness on trending cyber topics. The booths aimed to educate the general public in an accessible, hands-on format. Key topics presented included:</p>
+
+              <p class="text-gray-300"> <strong>Fly Electronic</strong> – Demonstrated how modern drones and wireless electronic devices can be exploited or compromised if not properly secured, emphasizing the importance of responsible usage and cybersecurity in emerging tech.</p>
+              
+                <p class="text-gray-300"><strong>Deepfake Technology</strong> – Explained how AI-generated media (deepfakes) are created, the threats they pose in misinformation, fraud, and identity misuse, and how to identify and protect against them.</p>
+                <p class="text-gray-300"> <strong>Hacker vs Hacker</strong> – An immersive segment that dove into the minds of both black-hat and white-hat hackers. Visitors learned how hackers operate, what motivates them, and how ethical hackers defend systems, creating a clearer picture of the cybersecurity battlefield.</p>
+
+                <p class="text-gray-300 "> <strong>The Victim and The Hacker</strong> – A storytelling experience that illustrated powerful, real-life scenarios of cyberattacks from both the victim's and hacker's perspectives. This segment aimed to create empathy, awareness, and a deeper understanding of the personal and emotional impact of cybercrime.
+                
+              
+                  <p class="text-gray-300 mt-4"> These booths served as a public-facing extension of the club's mission to promote cybersecurity literacy and spark dialogue around real-world digital risks..</p>
+          </div>
+          <div class="border-t border-gray-700 my-4"></div>
+          <div>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <img src="Photos/Gword1.jpeg" alt="Gword" class="w-full h-48 object-cover rounded-lg">
+              <img src="Photos/Gword2.jpeg" alt="Drone2" class="w-full h-48 object-cover rounded-lg">
+            </div>
+            <h4 class="text-lg font-semibold text-blue-300 mb-2">كلمة خريج </h4>
+            <p class="text-gray-300">initiative aimed at bridging the gap between academic life and the professional world, we hosted two impactful sessions featuring industry professionals and alumni:</p>
+
+              <p class="text-gray-300"><strong> من كلم علم لمحة</strong> – Hosted guest speaker Arwa Al-Omari, who shared her diverse experiences across multiple fields and provided students with valuable career advice. offered a great opportunity for learning and professional networking.</p>
+              
+                <p class="text-gray-300"><strong> حوار منتصف الطريق</strong>– This session focused on the challenges of transitioning from student life to the workforce. Eng. Rakan Al-Muzaini shared his inspiring journey and insights into navigating real-world challenges in the cybersecurity industry.</p>
+              
+                  <p class="text-gray-300 mt-4"> These sessions were designed to provide students with real-world perspectives, motivate them through relatable success stories, and prepare them for the next step in their professional paths.</p>
+              
+              </p>
+          </div>
+          <div>
+            <div class="flex gap-6 mb-6">
+              <img src="Photos/X.png" alt="Visit1" class="w-1/4 h-64 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <img src="Photos/X1.png" alt="Visit1" class="w-1/4 h-64 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <img src="Photos/X2.png" alt="Visit1" class="w-1/4 h-64 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <img src="Photos/X3.png" alt="Visit1" class="w-1/4 h-64 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+            </div>
+            <h4 class="text-lg font-semibold text-blue-300 mb-2">Competitions</h4>
+            <p class="text-gray-300">Hosted interactive cybersecurity competitions on Twitter as a creative approach to increase public engagement, promote security awareness, and strengthen technical skills in the field. These contests provided an accessible and engaging platform for audiences to participate in solving cybersecurity challenges.  </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+        <h3 class="text-xl font-bold text-blue-400 mb-3">Drones and Robotics Club</h3>
+        <h4 class="text-lg font-semibold text-blue-400 mb-1">Member Of Innovation</h4>
+        <div class="space-y-4">
+          <div>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <img src="Photos/Drone1.jpg" alt="Drone1" class="w-full h-48 object-cover rounded-lg">
+              <img src="Photos/Drone2.jpg" alt="Drone2" class="w-full h-48 object-cover rounded-lg">
+            </div>
+            <h4 class="text-lg font-semibold text-blue-300 mb-2">Drone Workshops</h4>
+          
+            <p class="text-gray-300">Conducted an intensive two-day workshop led by Dr. Saleh Al-Hajji and coordinated by Ibrahim Al-Khayyat, focusing on the fundamentals of drone technology. The workshop combined theoretical instruction with hands-on training, guiding participants through the complete process of assembling and programming a drone from the ground up.
+              Played a key role in facilitating technical learning and fostering participant engagement throughout the sessions.</p>
+          </div>
+          <div class="border-t border-gray-700 my-4"></div>
+          <div>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <img src="Photos/lego1.JPG" alt="Drone1" class="w-full h-48 object-cover rounded-lg">
+              <img src="Photos/lego2.jpg" alt="Drone2" class="w-full h-48 object-cover rounded-lg">
+            </div>
+            <h4 class="text-lg font-semibold text-blue-300 mb-2">Lego Spike</h4>
+            <p class="text-gray-300">Introducing participants to the fundamentals of LEGO robotics—from hardware assembly to programming—in preparation for a competitive challenge.
+              Led by Yazan Hussein (Robotics Team Leader) and Abdulrahman Malaika (Technical Committee Head) and Ahmed Alsalem (Head of Innovation), the event concluded with an exciting competition showcasing participants' creativity and technical skills.
+              Massive Shoutout to My Team Control+Alt+Build on their well-earned victory as we had the first place.</p> 
+            <p class="text-gray-300"> Rehaf Alfaleh , Rahaf Alruwaili ,Mashael Aljafar and Jumana Alaabsi The energy of everyone involved made this experience even more rewarding!</p>
+          </div>
+          <div class="border-t border-gray-700 my-4"></div>
+          <div>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <img src="Photos/Cv1.jpg" alt="Drone1" class="w-full h-48 object-cover rounded-lg">
+              <img src="Photos/CV2.jpg" alt="Drone2" class="w-full h-48 object-cover rounded-lg">
+            </div>
+            <h4 class="text-lg font-semibold text-blue-300 mb-2">Computer Vision</h4>
+            <p class="text-gray-300">Huge thanks to Abdulrahman Al-Mohammed who interdused us tofundamentals of computer vision as a first step into the field, aiming to deepen understanding of AI technologies and their real-world applications.</p>
+          </div>
+          <div class="border-t border-gray-700 my-4"></div>
+          <div>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <img src="Photos/Hack1.jpg" alt="Hack1" class="w-full h-48 object-cover rounded-lg">
+              <img src="Photos/Hack2.jpg" alt="Hack2" class="w-full h-48 object-cover rounded-lg">
+            </div>
+            <h4 class="text-lg font-semibold text-blue-300 mb-2">Hacking RC: Jamming & Taking Control</h4>
+            <p class="text-gray-300"> Special Thanks to Zaid Al-Anqari and Ibrahim Alkhayatt who presnted concepts in exploiting remote control systems, including jamming techniques and unauthorized control methods.
+              An engaging and practical experience that deepened participants' understanding of cybersecurity in embedded and wireless environments.</p>
+          </div>      
+        </div>
+      </div>
+
+      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+        <h3 class="text-xl font-bold text-blue-400 mb-3">Future Technology Club</h3>
+        <div class="space-y-4">
+          <div>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <img src="Photos/ftc1.jpeg" alt="Thiqah Visit" class="w-full h-48 object-cover rounded-lg">
+              <img src="Photos/ftc2.jpeg" alt="Thiqah Visit" class="w-full h-48 object-cover rounded-lg">
+            </div>
+            <h4 class="text-lg font-semibold text-blue-300 mb-2">Innovation Challenge 2</h4>
+            <p class="text-gray-300">Surrounded by creativity, passion, and true teamwork, it was an honor to be part of a dedicated team that helped deliver a unique and inspiring experience for all participants. The energy, excitement, and innovative ideas we witnessed proved once again there are no limits to creativity! 💡
+
+              
+              Special thanks to the mentors who guided the teams with their insights and expertise, and to the judges who added great value through their thoughtful evaluations and motivating feedback.
+     
+              Lastly, deep appreciation to the amazing leadership behind this initiative:
+              Lujain Alharbi, Abdullah Alzoum, Abdullah Alhusainan, and Rakan Alshunaibir—thank you for your trust and vision. </p>
+          </div>
+          </div>
+        </div>
+  
+        <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+          <h3 class="text-xl font-bold text-blue-400 mb-3">Bign Club</h3>
+          <div class="space-y-4">
+            <div>
+              <h4 class="text-lg font-semibold text-blue-300 mb-2">Member At Human Resources</h4>
+              <p class="text-gray-300">Contributed to event and workshop operations by creating and managing registration, attendance, and feedback forms. Ensured smooth participant onboarding, accurate data collection, and post-event reporting. Played a key role in maintaining organized communication and efficient coordination between teams and members.</p>
+            </div>
+            <div class="border-t border-gray-700 my-4"></div>
+            <div>
+              <div class="grid grid-cols-2 gap-4 mb-4">
+                <img src="Photos/Bign1.jpeg" alt="Bign " class="w-full h-48 object-cover rounded-lg">
+                <img src="Photos/Bign2.png" alt="Bign " class="w-full h-48 object-cover rounded-lg">
+              </div>
+              <h4 class="text-lg font-semibold text-blue-300 mb-2">Bign Forum</h4>
+              <p class="text-gray-300">I'm happy to be part of the BIG n Tech Forum, which aims to support creativity and innovation, open new horizons for idea exchange, and broaden perspectives in the world of technology.
+                I had the honor of being a speaker on NFC technology during the event.
+
+                Many thanks and appreciation to the leaders and members of BIG n for their efforts in organizing this exceptional event that brings together creators and tech enthusiasts under one roof.
+                </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+        <h3 class="text-xl font-bold text-blue-400 mb-3">University</h3>
+        <div class="space-y-4">
+          <div>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <img src="Photos/Grad1.jpeg" alt="Thiqah Visit" class="w-full h-48 object-cover rounded-lg">
+              <img src="Photos/grad2.jpeg" alt="Thiqah Visit" class="w-full h-48 object-cover rounded-lg">
+            </div>
+            <h4 class="text-lg font-semibold text-blue-300 mb-2">Graduation Ceremony</h4>
+            <p class="text-gray-300">Taking on the role of organizer gave me hands-on experience in planning, coordination.
+
+              Seeing everything come together and watching graduates celebrate their achievements made the effort worth it. Grateful for the opportunity to contribute to such a meaningful event.
+              
+              Shoutout to the amazing team who made it possible!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <div id="events" class="tab-content hidden p-8 max-w-4xl mx-auto mt-6 rounded shadow text-white">
+    <div class="grid grid-cols-1 gap-6">
+      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+        <div class="grid grid-cols-2 gap-4 mb-4">
+          <img src="Photos/BigO1.jpg" alt="BigO's Hackathon 2025" class="w-full h-48 object-cover rounded-lg">
+          <img src="Photos/BigO1.jpg" alt="BigO's Hackathon 2025" class="w-full h-48 object-cover rounded-lg">
+        </div>
+        <h3 class="text-xl font-bold text-pink-500 mb-3">BigO's Hackathon 2025</h3>
+        <p class="text-gray-300">Participated in BigO's Hackathon, a competitive and high-energy event that lasted over 5 hours. Although we didn't win, it was a valuable learning experience. We gained insight, improved our problem-solving skills, and witnessed the passion and dedication of the participants. Huge thanks to everyone who organized and supported the event, and for my amazing team Reema Alsamrani and Rehaf Alfaleh </p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+        <div class="grid grid-cols-2 gap-4 mb-4">
+          <img src="Photos/Thiqah1.jpeg" alt="Thiqah Visit" class="w-full h-48 object-cover rounded-lg">
+          <img src="Photos/Thiqah2.jpeg" alt="Thiqah Visit" class="w-full h-48 object-cover rounded-lg">
+        </div>
+        <h3 class="text-xl font-bold text-pink-500 mb-3">Thiqah Visit</h3>
+        <p class="text-gray-300">‏I had the privilege of attending the "Artificial Intelligence and Data Science" workshop organized by Thraa in collaboration with THIQAH .
+
+          The session explored a wide array of intriguing topics, including THIQAH's services, data science, Machine Learning , Large Language Models (LLMs), and cutting-edge AI advancements such as object detection, semantic analysis,and classification.
+          
+          ‏Huge thanks to everyone involved in making this event a success! </p>
+      </div>
+
+      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+        <div class="grid grid-cols-2 gap-4 mb-4">
+          <img src="Photos/Aiworkshop1.jpeg" alt="Thiqah Visit" class="w-full h-48 object-cover rounded-lg">
+          <img src="Photos/Aiworkshp2.jpeg" alt="Thiqah Visit" class="w-full h-48 object-cover rounded-lg">
+        </div>
+        <h3 class="text-xl font-bold text-pink-500 mb-3">AI Workshop</h3>
+        <p class="text-gray-300">I'm truly happy to have attended a session titled "Introduction to Artificial Intelligence." It clarified key concepts and fundamentals for me, making complex ideas feel much more accessible. The session was insightful, enriching, and genuinely inspiring 🤩
+
+          Huge thanks to Mr. Saad Alrazoq for his time and effort. He explained everything in a clear and engaging way—may Allah bless him for his dedication and generosity.
+          
+          Grateful for opportunities like this that spark curiosity and fuel passion for learning. Looking forward to diving deeper into the world of AI! </p>
+      </div>
+
+      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+        <h3 class="text-xl font-bold text-pink-500 mb-3">LEAP25</h3>
+        <p class="text-gray-300">Had the chance to explore the latest tech innovations, attend thought-provoking talks, and connect with inspiring minds from around the world. The energy, creativity, and ambition at LEAP were on another level.
+
+          From AI breakthroughs to futuristic startups, every corner of the exhibition was a reminder of how fast the tech world is moving—and how important it is to stay curious, keep learning, and be part of the change.
+          
+          Grateful for the experience and excited about where technology is headed. Until next time, LEAP!</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+        <h3 class="text-xl font-bold text-pink-500 mb-3">FinTech24</h3>
+        <div class="grid grid-cols-2 gap-4 mb-4">
+          <img src="Photos/fintch241.png" alt="FinTech24" class="w-full h-48 object-cover rounded-lg">
+          <img src="Photos/Fintech24.jpeg" alt="FinTech24" class="w-full h-48 object-cover rounded-lg">
+        </div>
+        <p class="text-gray-300">The event was packed with innovation, from groundbreaking AI applications to cutting-edge Fintech solutions that are redefining the future of finance.
+
+          It was exciting to see how technology is being used to streamline payments, boost financial inclusion, and reshape the global economy. The Fintech zone, in particular, stood out—with startups and industry leaders showcasing everything from blockchain to digital banking.
+          
+          Grateful for the opportunity to learn, connect, and get inspired by the bold visionaries building tomorrow's tech. Huge respect to everyone who made LEAP happen. This kind of exposure fuels ambition and opens new doors.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center text-gray-400 p-4 mt-8">
+    
+  </footer>
+
+  <script>
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => tab.classList.add('hidden'));
+      document.getElementById(tabId).classList.remove('hidden');
+    }
+
+    // Show "about" tab by default
+    document.addEventListener('DOMContentLoaded', () => showTab('about'));
+  </script>
+</body>
+</html>
