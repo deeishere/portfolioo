@@ -113,6 +113,7 @@
     .content-card {
       padding: clamp(1rem, 3vw, 2rem);
       margin-bottom: clamp(1rem, 3vw, 2rem);
+      background-color: #171725;
     }
 
     /* Media queries for different devices */
@@ -187,6 +188,14 @@
         image-rendering: -webkit-optimize-contrast;
       }
     }
+
+    /* Custom strong shadow */
+    .strong-shadow {
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+    .strong-shadow:hover {
+      box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.7);
+    }
   </style>
 </head>
 <body class="text-white font-sans">
@@ -253,13 +262,13 @@
 
     <div class="grid grid-cols-1 gap-6">
       <h3 class="text-xl font-bold text-red-500 mb-3">To Know More Details Vist My GitHub</h3>
-      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+      <div class="bg-[#171721] p-6 rounded-lg hover:bg-[#0f0f17] transition-all transform hover:scale-[1.02]">
     
         <h3 class="text-xl font-bold text-red-500 mb-3">AI Titanic Prediction</h3>
         <p class="text-gray-300">Developed machine learning models to predict survival outcomes of Titanic passengers using the classic dataset. Focused on classification techniques including <strong>Logistic Regression</strong>, <strong>Random Forest</strong>, and <strong>Support Vector Machine (SVM)</strong>.</p>
       </div>
 
-      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+      <div class="bg-[#171721] p-6 rounded-lg hover:bg-[#0f0f17] transition-all transform hover:scale-[1.02]">
         <div class="flex overflow-x-auto gap-4 mb-4">
           <img src="Photos/Image1.png" alt="Image Resizing" class="w-48 h-50 object-cover rounded-lg">
           <img src="Photos/Image2.png" alt="Image Resizing" class="w-48 h-50 object-cover rounded-lg">
@@ -274,17 +283,17 @@
         <p class="text-gray-300 mt-4"><strong>Greedy Algorithm</strong> –> A faster but heuristic-based method that makes locally optimal choices at each step, often leading to good (but not always optimal) results.</p>
       </div>
 
-      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+      <div class="bg-[#171721] p-6 rounded-lg hover:bg-[#0f0f17] transition-all transform hover:scale-[1.02]">
         <h3 class="text-xl font-bold text-red-500 mb-3">Generate Recipe</h3>
         <p class="text-gray-300">Hungry? Have Some Ingredients? just Generate The Recipe using ingredients you have </p>
       </div>
 
-      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+      <div class="bg-[#171721] p-6 rounded-lg hover:bg-[#0f0f17] transition-all transform hover:scale-[1.02]">
         <h3 class="text-xl font-bold text-red-500 mb-3">Humanoid Robot</h3>
         <p class="text-gray-300">To Be Continue...</p>
       </div>
 
-      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+      <div class="bg-[#171721] p-6 rounded-lg hover:bg-[#0f0f17] transition-all transform hover:scale-[1.02]">
         <h3 class="text-xl font-bold text-red-500 mb-3">Search Engine</h3>
         <p class="text-gray-300 mt-2">Built a functional search engine from scratch as a hands-on implementation of Information Retrieval concepts. The engine indexes documents and returns relevant search results based on user queries.</p>
         
@@ -302,16 +311,16 @@
 
   <div id="volunteer" class="tab-content hidden p-8 max-w-4xl mx-auto mt-6 rounded shadow text-white">
     <div class="grid grid-cols-1 gap-6">
-      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+      <div class="bg-[#171721] p-6 rounded-lg hover:bg-[#0f0f17] transition-all transform hover:scale-[1.02]">
         <h3 class="text-xl font-bold text-blue-400 mb-3">Cyber Security Club</h3>
         <h4 class="text-lg font-semibold text-blue-400 mb-1">Leader Of Activities</h4>
         <div class="border-t border-gray-700 my-4"></div>
         <div class="space-y-4">
           <div>
             <div class="flex overflow-x-auto gap-4 mb-6 mt-8">
-              <img src="Photos/Visit2.jpeg" alt="Visit1" class="w-48 h-48 flex-shrink-0 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <img src="Photos/Visit1.jpeg" alt="Visit1" class="w-48 h-48 flex-shrink-0 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <img src="Photos/Visit3.png" alt="Visit1" class="w-48 h-48 flex-shrink-0 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <img src="Photos/Visit2.jpeg" alt="Visit1" class="w-48 h-64 object-cover rounded-lg strong-shadow transition-shadow duration-300">
+              <img src="Photos/Visit1.jpeg" alt="Visit1" class="w-48 h-64 object-cover rounded-lg strong-shadow transition-shadow duration-300">
+              <img src="Photos/Visit3.png" alt="Visit1" class="w-48 h-64 object-cover rounded-lg strong-shadow transition-shadow duration-300">
             </div>
             <h4 class="text-lg font-semibold text-blue-300 mb-2">School Visits</h4>
             <p class="text-gray-300">As part of the Cyber Security Club's outreach initiative, we conducted an educational visit to a local school to introduce students to key concepts in cybersecurity.</p>
@@ -325,10 +334,10 @@
           <div class="border-t border-gray-700 my-4"></div>
           <div>
             <div class="flex overflow-x-auto gap-4 mb-6">
-              <img src="Photos/Booth1.jpeg" alt="Visit1" class="w-48 h-50 flex-shrink-0 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <img src="Photos/Booth2.jpeg" alt="Visit1" class="w-48 h-50 flex-shrink-0 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <img src="Photos/Booth3.jpeg" alt="Visit1" class="w-48 h-50 flex-shrink-0 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <img src="Photos/Booth4.jpeg" alt="Visit1" class="w-48 h-50 flex-shrink-0 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <img src="Photos/Booth1.jpeg" alt="Visit1" class="w-48 h-50 object-cover rounded-lg strong-shadow transition-shadow duration-300">
+              <img src="Photos/Booth2.jpeg" alt="Visit1" class="w-48 h-50 object-cover rounded-lg strong-shadow transition-shadow duration-300">
+              <img src="Photos/Booth3.jpeg" alt="Visit1" class="w-48 h-50 object-cover rounded-lg strong-shadow transition-shadow duration-300">
+              <img src="Photos/Booth4.jpeg" alt="Visit1" class="w-48 h-50 object-cover rounded-lg strong-shadow transition-shadow duration-300">
             </div>
             <h4 class="text-lg font-semibold text-blue-300 mb-2">Awareness Booths</h4>
             <p class="text-gray-300 mb-2">Participated in public engagement booths organized by the Cyber Security Club at major malls to raise awareness on trending cyber topics. The booths aimed to educate the general public in an accessible, hands-on format. Key topics presented included:</p>
@@ -346,8 +355,8 @@
           <div class="border-t border-gray-700 my-4"></div>
           <div>
             <div class="flex overflow-x-auto gap-4 mb-4">
-              <img src="Photos/Gword1.jpeg" alt="Gword" class="w-60 h-48  object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <img src="Photos/Gword2.jpeg" alt="Drone2" class="w-60 h-48 flex-shrink-0 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <img src="Photos/Gword1.jpeg" alt="Gword" class="w-60 h-48 object-cover rounded-lg strong-shadow transition-shadow duration-300">
+              <img src="Photos/Gword2.jpeg" alt="Drone2" class="w-60 h-48 object-cover rounded-lg strong-shadow transition-shadow duration-300">
             </div>
             <h4 class="text-lg font-semibold text-blue-300 mb-2">كلمة خريج </h4>
             <p class="text-gray-300">initiative aimed at bridging the gap between academic life and the professional world, we hosted two impactful sessions featuring industry professionals and alumni:</p>
@@ -362,10 +371,10 @@
           </div>
           <div>
             <div class="flex overflow-x-auto gap-4 mb-6">
-              <img src="Photos/X.png" alt="Visit1" class="w-48 h-50 flex-shrink-0 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <img src="Photos/X1.png" alt="Visit1" class="w-48 h-50 flex-shrink-0 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <img src="Photos/X2.png" alt="Visit1" class="w-48 h-50 flex-shrink-0 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <img src="Photos/X3.png" alt="Visit1" class="w-48 h-50 flex-shrink-0 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <img src="Photos/X.png" alt="Visit1" class="w-48 h-50 object-cover rounded-lg strong-shadow transition-shadow duration-300">
+              <img src="Photos/X1.png" alt="Visit1" class="w-48 h-50 object-cover rounded-lg strong-shadow transition-shadow duration-300">
+              <img src="Photos/X2.png" alt="Visit1" class="w-48 h-50 object-cover rounded-lg strong-shadow transition-shadow duration-300">
+              <img src="Photos/X3.png" alt="Visit1" class="w-48 h-50 object-cover rounded-lg strong-shadow transition-shadow duration-300">
             </div>
             <h4 class="text-lg font-semibold text-blue-300 mb-2">Competitions</h4>
             <p class="text-gray-300">Hosted interactive cybersecurity competitions on Twitter as a creative approach to increase public engagement, promote security awareness, and strengthen technical skills in the field. These contests provided an accessible and engaging platform for audiences to participate in solving cybersecurity challenges.  </p>
@@ -373,14 +382,14 @@
         </div>
       </div>
 
-      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+      <div class="bg-[#171721] p-6 rounded-lg hover:bg-[#0f0f17] transition-all transform hover:scale-[1.02]">
         <h3 class="text-xl font-bold text-blue-400 mb-3">Drones and Robotics Club</h3>
         <h4 class="text-lg font-semibold text-blue-400 mb-1">Member Of Innovation</h4>
         <div class="space-y-4">
           <div>
-            <div class="flex overflow-x-auto  gap-4 mb-4">
-              <img src="Photos/Drone1.jpg" alt="Drone1" class="w-full h-48 object-cover rounded-lg">
-              <img src="Photos/Drone2.jpg" alt="Drone2" class="w-full h-48 object-cover rounded-lg">
+            <div class="flex overflow-x-auto gap-4 mb-4">
+              <img src="Photos/Drone1.jpg" alt="Drone1" class="w-full h-48 object-cover rounded-lg strong-shadow transition-shadow duration-300">
+              <img src="Photos/Drone2.jpg" alt="Drone2" class="w-full h-48 object-cover rounded-lg strong-shadow transition-shadow duration-300">
             </div>
             <h4 class="text-lg font-semibold text-blue-300 mb-2">Drone Workshops</h4>
           
@@ -390,8 +399,8 @@
           <div class="border-t border-gray-700 my-4"></div>
           <div>
             <div class="flex overflow-x-auto gap-4 mb-4">
-              <img src="Photos/lego1.JPG" alt="Drone1" class="w-full h-48 object-cover rounded-lg">
-              <img src="Photos/lego2.jpg" alt="Drone2" class="w-full h-48 object-cover rounded-lg">
+              <img src="Photos/lego1.JPG" alt="Drone1" class="w-full h-48 object-cover rounded-lg strong-shadow transition-shadow duration-300">
+              <img src="Photos/lego2.jpg" alt="Drone2" class="w-full h-48 object-cover rounded-lg strong-shadow transition-shadow duration-300">
             </div>
             <h4 class="text-lg font-semibold text-blue-300 mb-2">Lego Spike</h4>
             <p class="text-gray-300">Introducing participants to the fundamentals of LEGO robotics—from hardware assembly to programming—in preparation for a competitive challenge.
@@ -402,8 +411,8 @@
           <div class="border-t border-gray-700 my-4"></div>
           <div>
             <div class="flex overflow-x-auto gap-4 mb-4">
-              <img src="Photos/Cv1.jpg" alt="Drone1" class="w-full h-48 object-cover rounded-lg">
-              <img src="Photos/CV2.jpg" alt="Drone2" class="w-full h-48 object-cover rounded-lg">
+              <img src="Photos/Cv1.jpg" alt="Drone1" class="w-full h-48 object-cover rounded-lg strong-shadow transition-shadow duration-300">
+              <img src="Photos/CV2.jpg" alt="Drone2" class="w-full h-48 object-cover rounded-lg strong-shadow transition-shadow duration-300">
             </div>
             <h4 class="text-lg font-semibold text-blue-300 mb-2">Computer Vision</h4>
             <p class="text-gray-300">Huge thanks to Abdulrahman Al-Mohammed who interdused us tofundamentals of computer vision as a first step into the field, aiming to deepen understanding of AI technologies and their real-world applications.</p>
@@ -411,8 +420,8 @@
           <div class="border-t border-gray-700 my-4"></div>
           <div>
             <div class="flex overflow-x-auto gap-4 mb-4">
-              <img src="Photos/Hack1.jpg" alt="Hack1" class="w-full h-48 object-cover rounded-lg">
-              <img src="Photos/Hack2.jpg" alt="Hack2" class="w-full h-48 object-cover rounded-lg">
+              <img src="Photos/Hack1.jpg" alt="Hack1" class="w-full h-48 object-cover rounded-lg strong-shadow transition-shadow duration-300">
+              <img src="Photos/Hack2.jpg" alt="Hack2" class="w-full h-48 object-cover rounded-lg strong-shadow transition-shadow duration-300">
             </div>
             <h4 class="text-lg font-semibold text-blue-300 mb-2">Hacking RC: Jamming & Taking Control</h4>
             <p class="text-gray-300"> Special Thanks to Zaid Al-Anqari and Ibrahim Alkhayatt who presnted concepts in exploiting remote control systems, including jamming techniques and unauthorized control methods.
@@ -421,13 +430,13 @@
         </div>
       </div>
 
-      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+      <div class="bg-[#171721] p-6 rounded-lg hover:bg-[#0f0f17] transition-all transform hover:scale-[1.02]">
         <h3 class="text-xl font-bold text-blue-400 mb-3">Future Technology Club</h3>
         <div class="space-y-4">
           <div>
             <div class="flex overflow-x-auto gap-4 mb-4">
-              <img src="Photos/ftc1.jpeg" alt="Thiqah Visit" class="w-full h-48 object-cover rounded-lg">
-              <img src="Photos/ftc2.jpeg" alt="Thiqah Visit" class="w-full h-48 object-cover rounded-lg">
+              <img src="Photos/ftc1.jpeg" alt="Thiqah Visit" class="w-full h-48 object-cover rounded-lg strong-shadow transition-shadow duration-300">
+              <img src="Photos/ftc2.jpeg" alt="Thiqah Visit" class="w-full h-48 object-cover rounded-lg strong-shadow transition-shadow duration-300">
             </div>
             <h4 class="text-lg font-semibold text-blue-300 mb-2">Innovation Challenge 2</h4>
             <p class="text-gray-300">Surrounded by creativity, passion, and true teamwork, it was an honor to be part of a dedicated team that helped deliver a unique and inspiring experience for all participants. The energy, excitement, and innovative ideas we witnessed proved once again there are no limits to creativity! 💡
@@ -441,7 +450,7 @@
           </div>
         </div>
   
-        <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+        <div class="bg-[#171721] p-6 rounded-lg hover:bg-[#0f0f17] transition-all transform hover:scale-[1.02]">
           <h3 class="text-xl font-bold text-blue-400 mb-3">Bign Club</h3>
           <div class="space-y-4">
             <div>
@@ -451,8 +460,8 @@
             <div class="border-t border-gray-700 my-4"></div>
             <div>
               <div class="flex overflow-x-auto gap-4 mb-4">
-                <img src="Photos/Bign1.jpeg" alt="Bign " class="w-full h-48 object-cover rounded-lg">
-                <img src="Photos/Bign2.png" alt="Bign " class="w-full h-48 object-cover rounded-lg">
+                <img src="Photos/Bign1.jpeg" alt="Bign" class="w-full h-48 object-cover rounded-lg strong-shadow transition-shadow duration-300">
+                <img src="Photos/Bign2.png" alt="Bign" class="w-full h-48 object-cover rounded-lg strong-shadow transition-shadow duration-300">
               </div>
               <h4 class="text-lg font-semibold text-blue-300 mb-2">Bign Forum</h4>
               <p class="text-gray-300">I'm happy to be part of the BIG n Tech Forum, which aims to support creativity and innovation, open new horizons for idea exchange, and broaden perspectives in the world of technology.
@@ -464,13 +473,13 @@
         </div>
       </div>
 
-      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+      <div class="bg-[#171721] p-6 rounded-lg hover:bg-[#0f0f17] transition-all transform hover:scale-[1.02]">
         <h3 class="text-xl font-bold text-blue-400 mb-3">University</h3>
         <div class="space-y-4">
           <div>
             <div class="flex overflow-x-auto gap-4 mb-4">
-              <img src="Photos/Grad1.jpeg" alt="Thiqah Visit" class="w-full h-48 object-cover rounded-lg">
-              <img src="Photos/grad2.jpeg" alt="Thiqah Visit" class="w-full h-48 object-cover rounded-lg">
+              <img src="Photos/Grad1.jpeg" alt="Thiqah Visit" class="w-full h-48 object-cover rounded-lg strong-shadow transition-shadow duration-300">
+              <img src="Photos/grad2.jpeg" alt="Thiqah Visit" class="w-full h-48 object-cover rounded-lg strong-shadow transition-shadow duration-300">
             </div>
             <h4 class="text-lg font-semibold text-blue-300 mb-2">Graduation Ceremony</h4>
             <p class="text-gray-300">Taking on the role of organizer gave me hands-on experience in planning, coordination.
@@ -487,18 +496,18 @@
 
   <div id="events" class="tab-content hidden p-8 max-w-4xl mx-auto mt-6 rounded shadow text-white">
     <div class="grid grid-cols-1 gap-6">
-      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+      <div class="bg-[#171721] p-6 rounded-lg hover:bg-[#0f0f17] transition-all transform hover:scale-[1.02]">
         <div class="flex overflow-x-auto gap-4 mb-4">
-          <img src="Photos/BigO1.jpg" alt="BigO's Hackathon 2025" class="w-full h-48 object-cover rounded-lg">
-          <img src="Photos/BigO1.jpg" alt="BigO's Hackathon 2025" class="w-full h-48 object-cover rounded-lg">
+          <img src="Photos/BigO1.jpg" alt="BigO's Hackathon 2025" class="w-full h-48 object-cover rounded-lg strong-shadow transition-shadow duration-300">
+          <img src="Photos/BigO1.jpg" alt="BigO's Hackathon 2025" class="w-full h-48 object-cover rounded-lg strong-shadow transition-shadow duration-300">
         </div>
         <h3 class="text-xl font-bold text-pink-500 mb-3">BigO's Hackathon 2025</h3>
         <p class="text-gray-300">Participated in BigO's Hackathon, a competitive and high-energy event that lasted over 5 hours. Although we didn't win, it was a valuable learning experience. We gained insight, improved our problem-solving skills, and witnessed the passion and dedication of the participants. Huge thanks to everyone who organized and supported the event, and for my amazing team Reema Alsamrani and Rehaf Alfaleh </p>
       </div>
-      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+      <div class="bg-[#171721] p-6 rounded-lg hover:bg-[#0f0f17] transition-all transform hover:scale-[1.02]">
         <div class="flex overflow-x-auto gap-4 mb-4">
-          <img src="Photos/Thiqah1.jpeg" alt="Thiqah Visit" class="w-full h-48 object-cover rounded-lg">
-          <img src="Photos/Thiqah2.jpeg" alt="Thiqah Visit" class="w-full h-48 object-cover rounded-lg">
+          <img src="Photos/Thiqah1.jpeg" alt="Thiqah Visit" class="w-full h-48 object-cover rounded-lg strong-shadow transition-shadow duration-300">
+          <img src="Photos/Thiqah2.jpeg" alt="Thiqah Visit" class="w-full h-48 object-cover rounded-lg strong-shadow transition-shadow duration-300">
         </div>
         <h3 class="text-xl font-bold text-pink-500 mb-3">Thiqah Visit</h3>
         <p class="text-gray-300">‏I had the privilege of attending the "Artificial Intelligence and Data Science" workshop organized by Thraa in collaboration with THIQAH .
@@ -508,10 +517,10 @@
           ‏Huge thanks to everyone involved in making this event a success! </p>
       </div>
 
-      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+      <div class="bg-[#171721] p-6 rounded-lg hover:bg-[#0f0f17] transition-all transform hover:scale-[1.02]">
         <div class="flex overflow-x-auto gap-4 mb-4">
-          <img src="Photos/Aiworkshop1.jpeg" alt="Thiqah Visit" class="w-full h-48 object-cover rounded-lg">
-          <img src="Photos/Aiworkshp2.jpeg" alt="Thiqah Visit" class="w-full h-48 object-cover rounded-lg">
+          <img src="Photos/Aiworkshop1.jpeg" alt="Thiqah Visit" class="w-full h-48 object-cover rounded-lg strong-shadow transition-shadow duration-300">
+          <img src="Photos/Aiworkshp2.jpeg" alt="Thiqah Visit" class="w-full h-48 object-cover rounded-lg strong-shadow transition-shadow duration-300">
         </div>
         <h3 class="text-xl font-bold text-pink-500 mb-3">AI Workshop</h3>
         <p class="text-gray-300">I'm truly happy to have attended a session titled "Introduction to Artificial Intelligence." It clarified key concepts and fundamentals for me, making complex ideas feel much more accessible. The session was insightful, enriching, and genuinely inspiring 🤩
@@ -521,7 +530,7 @@
           Grateful for opportunities like this that spark curiosity and fuel passion for learning. Looking forward to diving deeper into the world of AI! </p>
       </div>
 
-      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+      <div class="bg-[#171721] p-6 rounded-lg hover:bg-[#0f0f17] transition-all transform hover:scale-[1.02]">
         <h3 class="text-xl font-bold text-pink-500 mb-3">LEAP25</h3>
         <p class="text-gray-300">Had the chance to explore the latest tech innovations, attend thought-provoking talks, and connect with inspiring minds from around the world. The energy, creativity, and ambition at LEAP were on another level.
 
@@ -529,11 +538,11 @@
           
           Grateful for the experience and excited about where technology is headed. Until next time, LEAP!</p>
       </div>
-      <div class="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-all transform hover:scale-[1.02]">
+      <div class="bg-[#171721] p-6 rounded-lg hover:bg-[#0f0f17] transition-all transform hover:scale-[1.02]">
         <h3 class="text-xl font-bold text-pink-500 mb-3">FinTech24</h3>
         <div class="flex overflow-x-auto gap-4 mb-4">
-          <img src="Photos/fintch241.png" alt="FinTech24" class="w-full h-48 object-cover rounded-lg">
-          <img src="Photos/Fintech24.jpeg" alt="FinTech24" class="w-full h-48 object-cover rounded-lg">
+          <img src="Photos/fintch241.png" alt="FinTech24" class="w-full h-48 object-cover rounded-lg strong-shadow transition-shadow duration-300">
+          <img src="Photos/Fintech24.jpeg" alt="FinTech24" class="w-full h-48 object-cover rounded-lg strong-shadow transition-shadow duration-300">
         </div>
         <p class="text-gray-300">The event was packed with innovation, from groundbreaking AI applications to cutting-edge Fintech solutions that are redefining the future of finance.
 
