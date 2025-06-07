@@ -293,7 +293,7 @@
             <input type="text" id="ingredients" class="bg-gray-800 text-white p-2 rounded border border-gray-700 focus:border-red-500 focus:outline-none" placeholder="e.g., chicken, rice, tomatoes">
           </div>
           
-          <button onclick="generateRecipe()" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200">
+          <button onclick="generateRecipe()" class="bg-red-700 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200">
             Generate Recipe
           </button>
           
@@ -630,7 +630,7 @@
         loadingSpinner.classList.remove('hidden');
         recipeResult.classList.add('hidden');
         
-        const response = await fetch('http://localhost:5000/generate-recipe', {
+        const response = await fetch('./generate-recipe', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
