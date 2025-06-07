@@ -6,9 +6,6 @@
   <title>Doaa's Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <!-- Add PyScript -->
-  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
   <style>
     /* Base styles */
     * {
@@ -204,7 +201,7 @@
 <body class="text-white font-sans">
   <!-- Header -->
   <header class="header-gradient text-center">
-    <h1 class="responsive-text text-gray-300 font-bold mb-4 typing">Doa</h1>
+    <h1 class="responsive-text text-gray-300 font-bold mb-4 typing">Doaa</h1>
     <p class="responsive-subtext text-gray-300 typing mb-8">Computer Science Senior</p>
   </header>
 
@@ -223,34 +220,34 @@
 
     <h2 class="text-2xl font-semibold mt-8 mb-4 text-purple-400">Skills</h2>
     <div class="grid grid-cols-2 gap-4 max-w-2xl p-4">
-      <div class="border border-purple-300 p-4 rounded-lg text-center">
+      <div class="border border-gray-600 p-4 rounded-lg text-center">
         <span class="text-gray-200">Python</span>
       </div>
-      <div class="border border-purple-300 p-4 rounded-lg text-center">
+      <div class="border border-gray-600 p-4 rounded-lg text-center">
         <span class="text-gray-200">C++</span>
       </div>
-      <div class="border border-purple-300 p-4 rounded-lg text-center">
+      <div class="border border-gray-600 p-4 rounded-lg text-center">
         <span class="text-gray-200">HTML/CSS/JS</span>
       </div>
-      <div class="border border-purple-300 p-4 rounded-lg text-center">
+      <div class="border border-gray-600 p-4 rounded-lg text-center">
         <span class="text-gray-200">Git/GitHub</span>
       </div>
-      <div class="border border-purple-300 p-4 rounded-lg text-center">
+      <div class="border border-gray-600 p-4 rounded-lg text-center">
         <span class="text-gray-200">Computer Vision</span>
       </div>
-      <div class="border border-purple-300 p-4 rounded-lg text-center">
+      <div class="border border-gray-600 p-4 rounded-lg text-center">
         <span class="text-gray-200">Machine Learning</span>
       </div>
-      <div class="border border-purple-300 p-4 rounded-lg text-center">
+      <div class="border border-gray-600 p-4 rounded-lg text-center">
         <span class="text-gray-200">Java</span>
       </div>
-      <div class="border border-purple-300 p-4 rounded-lg text-center">
+      <div class="border border-gray-600 p-4 rounded-lg text-center">
         <span class="text-gray-200">IoT</span>
       </div>
-      <div class="border border-purple-300 p-4 rounded-lg text-center">
+      <div class="border border-gray-600 p-4 rounded-lg text-center">
         <span class="text-gray-200">AI</span>
       </div>
-      <div class="border border-purple-300 p-4 rounded-lg text-center">
+      <div class="border border-gray-600 p-4 rounded-lg text-center">
         <span class="text-gray-200">VS</span>
       </div>
     </div>
@@ -264,7 +261,7 @@
   <div id="projects" class="tab-content hidden p-8 max-w-4xl mx-auto mt-6 rounded shadow text-white">
 
     <div class="grid grid-cols-1 gap-6">
-      <h3 class="text-xl font-bold text-red-500 mb-3">To Know More Details Visit My GitHub</h3>
+      <h3 class="text-xl font-bold text-red-500 mb-3">To Know More Details Vist My GitHub</h3>
       <div class="bg-[#171721] p-6 rounded-lg hover:bg-[#0f0f17] transition-all transform hover:scale-[1.02]">
     
         <h3 class="text-xl font-bold text-red-500 mb-3">AI Titanic Prediction</h3>
@@ -288,26 +285,7 @@
 
       <div class="bg-[#171721] p-6 rounded-lg hover:bg-[#0f0f17] transition-all transform hover:scale-[1.02]">
         <h3 class="text-xl font-bold text-red-500 mb-3">Generate Recipe</h3>
-        <p class="text-gray-300 mb-4">Hungry? Have Some Ingredients? Just generate a recipe using ingredients you have!</p>
-        
-        <div class="space-y-4">
-          <div class="flex flex-col space-y-2">
-            <label for="ingredients" class="text-gray-300">Enter ingredients (comma-separated):</label>
-            <input type="text" id="ingredients" class="bg-gray-800 text-white p-2 rounded border border-gray-700 focus:border-red-500 focus:outline-none" placeholder="e.g., chicken, rice, tomatoes">
-          </div>
-          
-          <button onclick="generateRecipe()" class="bg-red-700 hover:bg-red-800 text-white font-bold py-2 px-4 rounded transition-colors duration-200">
-            Generate Recipe
-          </button>
-          
-          <div id="recipeResult" class="mt-4 p-4 bg-gray-800 rounded hidden">
-            <pre class="text-gray-300 whitespace-pre-wrap"></pre>
-          </div>
-          
-          <div id="loadingSpinner" class="hidden">
-            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-red-500 mx-auto"></div>
-          </div>
-        </div>
+        <p class="text-gray-300">Hungry? Have Some Ingredients? just Generate The Recipe using ingredients you have </p>
       </div>
 
       <div class="bg-[#171721] p-6 rounded-lg hover:bg-[#0f0f17] transition-all transform hover:scale-[1.02]">
@@ -606,58 +584,6 @@
     
   </footer>
 
-  <py-config>
-    packages = ["openai"]
-  </py-config>
-
-  <py-script>
-    from openai import OpenAI
-    import json
-
-    # Initialize OpenAI client
-    client = OpenAI(
-        base_url="https://models.github.ai/inference",
-        api_key=os.environ["GITHUB_TOKEN"]
-    )
-
-    def generate_recipe(ingredients):
-        try:
-            # Formulate the prompt
-            prompt_content = (
-                "Please create a recipe for children using the following ingredients: "
-                f"{', '.join(ingredients)}. "
-                "The approximate time to do it 'Approximate Time:'"
-                "Include a creative name with 'Recipe Title:', "
-                "an introduction with 'Introduction:', "
-                "ingredients with 'Ingredients:', and "
-                "cooking steps with 'Cooking Steps:'."
-            )
-
-            # Make API request
-            response = client.chat.completions.create(
-                messages=[
-                    {"role": "system", "content": "You are an expert chef."},
-                    {"role": "user", "content": prompt_content},
-                ],
-                temperature=1.0,
-                max_tokens=1000,
-                model="openai/gpt-4o-mini",
-            )
-            
-            return response.choices[0].message.content.strip()
-        except Exception as e:
-            return f"Error: {str(e)}"
-
-    # JavaScript function to call Python
-    def generate_recipe_js(ingredients_str):
-        ingredients = [i.strip() for i in ingredients_str.split(',') if i.strip()]
-        if not ingredients:
-            return "Please enter at least one ingredient"
-        
-        result = generate_recipe(ingredients)
-        return result
-  </py-script>
-
   <script>
     function showTab(tabId) {
       const tabs = document.querySelectorAll('.tab-content');
@@ -667,35 +593,6 @@
 
     // Show "about" tab by default
     document.addEventListener('DOMContentLoaded', () => showTab('about'));
-
-    async function generateRecipe() {
-      const ingredientsInput = document.getElementById('ingredients');
-      const recipeResult = document.getElementById('recipeResult');
-      const loadingSpinner = document.getElementById('loadingSpinner');
-      const resultText = recipeResult.querySelector('pre');
-      
-      const ingredients = ingredientsInput.value;
-      
-      if (!ingredients) {
-        alert('Please enter at least one ingredient');
-        return;
-      }
-      
-      try {
-        loadingSpinner.classList.remove('hidden');
-        recipeResult.classList.add('hidden');
-        
-        // Call Python function through PyScript
-        const result = await pyscript.interpreter.globals.get('generate_recipe_js')(ingredients);
-        
-        resultText.textContent = result;
-        recipeResult.classList.remove('hidden');
-      } catch (error) {
-        alert('Error: Could not generate recipe');
-      } finally {
-        loadingSpinner.classList.add('hidden');
-      }
-    }
   </script>
 </body>
 </html>
