@@ -6,6 +6,9 @@
   <title>Doaa's Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Add PyScript -->
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
   <style>
     /* Base styles */
     * {
@@ -201,7 +204,7 @@
 <body class="text-white font-sans">
   <!-- Header -->
   <header class="header-gradient text-center">
-    <h1 class="responsive-text text-gray-300 font-bold mb-4 typing">Doaa</h1>
+    <h1 class="responsive-text text-gray-300 font-bold mb-4 typing">Doa</h1>
     <p class="responsive-subtext text-gray-300 typing mb-8">Computer Science Senior</p>
   </header>
 
@@ -293,7 +296,7 @@
             <input type="text" id="ingredients" class="bg-gray-800 text-white p-2 rounded border border-gray-700 focus:border-red-500 focus:outline-none" placeholder="e.g., chicken, rice, tomatoes">
           </div>
           
-          <button onclick="generateRecipe()" class="bg-red-700 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200">
+          <button onclick="generateRecipe()" class="bg-red-700 hover:bg-red-800 text-white font-bold py-2 px-4 rounded transition-colors duration-200">
             Generate Recipe
           </button>
           
@@ -603,6 +606,58 @@
     
   </footer>
 
+  <py-config>
+    packages = ["openai"]
+  </py-config>
+
+  <py-script>
+    from openai import OpenAI
+    import json
+
+    # Initialize OpenAI client
+    client = OpenAI(
+        base_url="https://models.github.ai/inference",
+        api_key=os.environ["GITHUB_TOKEN"]
+    )
+
+    def generate_recipe(ingredients):
+        try:
+            # Formulate the prompt
+            prompt_content = (
+                "Please create a recipe for children using the following ingredients: "
+                f"{', '.join(ingredients)}. "
+                "The approximate time to do it 'Approximate Time:'"
+                "Include a creative name with 'Recipe Title:', "
+                "an introduction with 'Introduction:', "
+                "ingredients with 'Ingredients:', and "
+                "cooking steps with 'Cooking Steps:'."
+            )
+
+            # Make API request
+            response = client.chat.completions.create(
+                messages=[
+                    {"role": "system", "content": "You are an expert chef."},
+                    {"role": "user", "content": prompt_content},
+                ],
+                temperature=1.0,
+                max_tokens=1000,
+                model="openai/gpt-4o-mini",
+            )
+            
+            return response.choices[0].message.content.strip()
+        except Exception as e:
+            return f"Error: {str(e)}"
+
+    # JavaScript function to call Python
+    def generate_recipe_js(ingredients_str):
+        ingredients = [i.strip() for i in ingredients_str.split(',') if i.strip()]
+        if not ingredients:
+            return "Please enter at least one ingredient"
+        
+        result = generate_recipe(ingredients)
+        return result
+  </py-script>
+
   <script>
     function showTab(tabId) {
       const tabs = document.querySelectorAll('.tab-content');
@@ -619,9 +674,9 @@
       const loadingSpinner = document.getElementById('loadingSpinner');
       const resultText = recipeResult.querySelector('pre');
       
-      const ingredients = ingredientsInput.value.split(',').map(i => i.trim()).filter(i => i);
+      const ingredients = ingredientsInput.value;
       
-      if (ingredients.length === 0) {
+      if (!ingredients) {
         alert('Please enter at least one ingredient');
         return;
       }
@@ -630,24 +685,13 @@
         loadingSpinner.classList.remove('hidden');
         recipeResult.classList.add('hidden');
         
-        const response = await fetch('./generate-recipe', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ ingredients }),
-        });
+        // Call Python function through PyScript
+        const result = await pyscript.interpreter.globals.get('generate_recipe_js')(ingredients);
         
-        const data = await response.json();
-        
-        if (response.ok) {
-          resultText.textContent = data.recipe;
-          recipeResult.classList.remove('hidden');
-        } else {
-          alert('Error: ' + (data.error || 'Failed to generate recipe'));
-        }
+        resultText.textContent = result;
+        recipeResult.classList.remove('hidden');
       } catch (error) {
-        alert('Error: Could not connect to the recipe generator service');
+        alert('Error: Could not generate recipe');
       } finally {
         loadingSpinner.classList.add('hidden');
       }
