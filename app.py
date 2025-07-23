@@ -18,7 +18,7 @@ client = OpenAI(
     api_key=token,
 )
 
-@app.route('/generate-recipe', methods=['POST'])
+@app.route('/')
 def generate_recipe():
     try:
         data = request.get_json()
